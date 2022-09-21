@@ -376,6 +376,21 @@ pre code {
 <p>Here is the code shown below:</p>
 <pre class="r"><code>data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)</code></pre>
 </div>
+<div id="a-short-description-of-the-dataset" class="section level3">
+<h3>A short description of the dataset</h3>
+<p>First of all, here are <strong>8</strong> important variables in the
+dataset which are species, island, bill_length_mm, bill_depth_mm,
+flipper_length_mm, body_mass_g, sex, and year.</p>
+<p>The size of the dataset:</p>
+<pre class="r"><code>nrow(penguins)</code></pre>
+<pre><code>## [1] 344</code></pre>
+<pre class="r"><code>ncol(penguins)</code></pre>
+<pre><code>## [1] 8</code></pre>
+<p>The data frame has 344 rows, and 8 columns.</p>
+<p>Working on the mean flipper length:</p>
+<pre class="r"><code>Mean = mean(penguins$flipper_length_mm, na.rm = TRUE)</code></pre>
+<p>The mean is equal to 200.9152047.</p>
+</div>
 </div>
 
 

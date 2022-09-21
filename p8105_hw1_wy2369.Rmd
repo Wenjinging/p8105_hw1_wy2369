@@ -14,5 +14,24 @@ Here is the code shown below:
 data("penguins", package = "palmerpenguins")
 ```
 
+### A short description of the dataset
 
-  
+First of all, here are **8** important variables in the dataset which are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. 
+
+
+The size of the dataset:
+```{r}
+nrow(penguins)
+```
+
+```{r}
+ncol(penguins)
+```
+The data frame has `r nrow(penguins)` rows, and `r ncol(penguins)` columns. 
+
+
+Working on the mean flipper length:
+```{r}
+Mean = mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+The mean is equal to `r Mean`. 

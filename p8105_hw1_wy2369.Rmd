@@ -19,7 +19,7 @@ data("penguins", package = "palmerpenguins")
 First of all, here are **8** important variables in the dataset which are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. 
 
 
-The size of the dataset:
+##### The size of the dataset:
 ```{r}
 nrow(penguins)
 ```
@@ -30,8 +30,24 @@ ncol(penguins)
 The data frame has `r nrow(penguins)` rows, and `r ncol(penguins)` columns. 
 
 
-Working on the mean flipper length:
+##### Calculate the mean flipper length:
 ```{r}
 Mean = mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 The mean is equal to `r Mean`. 
+
+### A scatterplot using `ggplot`
+Here is the code to make the scatterplot and color by three species:
+```{r message = FALSE}
+library(tidyverse)
+
+ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) + geom_point()
+
+```
+
+The plot looks good and we need to save it using `ggsave`:
+```{r}
+ggsave("scatterplot_hw1.pdf")
+```
+
+

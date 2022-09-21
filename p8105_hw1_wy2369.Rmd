@@ -1,8 +1,7 @@
 ---
 title: "p8105_hw1_wy2369"
-author: Wenjing Yang
 date: September 22 
-output: html_document
+output: github_document
 ---
 
 # Problem 1
@@ -16,7 +15,7 @@ data("penguins", package = "palmerpenguins")
 
 ### A short description of the dataset
 
-First of all, here are **8** important variables in the dataset which are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. 
+First of all, here are **8** important variables in the dataset which are **species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year**. 
 
 
 ##### The size of the dataset:
@@ -45,9 +44,16 @@ ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) +
 
 ```
 
-The plot looks good and we need to save it using `ggsave`:
+The scatterplot looks good and we save it using `ggsave`:
 ```{r}
 ggsave("scatterplot_hw1.pdf")
+```
+
+# Problem 2
+
+### Create a data frame
+```{r}
+
 ```
 
 

@@ -1,0 +1,18 @@
+---
+title: "p8105_hw1_wy2369"
+author: Wenjing Yang
+date: September 22 
+output: html_document
+---
+
+# Problem 1
+
+### Load the `penguins` dataset 
+
+Here is the code shown below:
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+
+  

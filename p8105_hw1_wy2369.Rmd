@@ -37,7 +37,7 @@ The mean of filpper length is equal to **`r Mean`**.
 ### A scatterplot using `ggplot`
 
 Here is the code to make the scatterplot of flipper_length_mm (y) vs bill_length_mm (x) and color by three species:
-```{r message = FALSE}
+```{r message = FALSE, warning = FALSE}
 library(ggplot2)
 
 ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) + geom_point()
@@ -45,7 +45,7 @@ ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) +
 ```
 
 The scatterplot looks good and we save it using `ggsave`:
-```{r}
+```{r warning = FALSE}
 ggsave("scatterplot_hw1.pdf")
 ```
 
@@ -65,8 +65,6 @@ p2_df = tibble(
   vec_char = c("A","B","C","D","E","F","G","H","I","J"),
   vec_factor = factor(c("small","small","small","medium","medium","medium","large","large","large","small"))
 )
-print(p2_df)
-
 ```
 
 ### Take the mean value
@@ -79,7 +77,16 @@ mean(pull(p2_df,vec_char))
 mean(pull(p2_df,vec_factor))
 ```
 
-For `vec_df` and `vec_logical`, the mean value can be determined. However, the mean output of `vec_char` and `vec_factor` are NA because they are not numeric variables. 
+For `vec_df` and `vec_logical`, the mean value can be determined. However, the mean output of `vec_char` and `vec_factor` are NA because they are not numeric or logical variables. 
 
 
+### Convert the variables
 
+Apply the `as.numeric` function to the logical, character, and factor variables 
+```{r eval = FALSE}
+as.numeric(pull(p2_df,vec_logical))
+as.numeric(pull(p2_df,vec_char))
+as.numeric(pull(p2_df,vec_factor))
+```
+
+Using the code chunk, logical and factor variables are converted to numeric variables, and can take the mean. However the character variable cannot be converted.

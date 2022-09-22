@@ -18,7 +18,6 @@ data("penguins", package = "palmerpenguins")
 First of all, here are **8** important variables in the dataset which are **species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year**. 
 
 
-##### The size of the dataset:
 ```{r}
 nrow(penguins)
 ```
@@ -26,19 +25,20 @@ nrow(penguins)
 ```{r}
 ncol(penguins)
 ```
-The data frame has `r nrow(penguins)` rows, and `r ncol(penguins)` columns. 
+The data frame has **`r nrow(penguins)`** rows, and **`r ncol(penguins)`** columns. 
 
 
-##### Calculate the mean flipper length:
 ```{r}
 Mean = mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
-The mean is equal to `r Mean`. 
+The mean of filpper length is equal to **`r Mean`**. 
+
+
 
 ### A scatterplot using `ggplot`
-Here is the code to make the scatterplot and color by three species:
+Here is the code to make the scatterplot of flipper_length_mm (y) vs bill_length_mm (x) and color by three species:
 ```{r message = FALSE}
-library(tidyverse)
+library(ggplot2)
 
 ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) + geom_point()
 
@@ -52,8 +52,20 @@ ggsave("scatterplot_hw1.pdf")
 # Problem 2
 
 ### Create a data frame
-```{r}
+Load the `tidyverse` and make dataframe: 
+```{r message =  FALSE}
+library(tidyverse)
+p2_df = tibble(
+  vec_df = rnorm(10),
+  vec_logical = vec_df > 0,
+  vec_char = c("A","B","C","D","E","F","G","H","I","J"),
+  vec_factor = factor(c("small","small","small","medium","medium","medium","large","large","large","small"))
+)
+print(p2_df)
 
 ```
+
+### Calculate the mean of each variable in my dataframe
+
 
 
